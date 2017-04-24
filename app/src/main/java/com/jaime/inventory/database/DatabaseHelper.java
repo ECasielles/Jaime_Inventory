@@ -18,9 +18,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     public DatabaseHelper() {
+        //Como pide constructor, accedemos desde Application en vez de pasarlo por todas las capas
         super(InventoryApplication.getContext(), DATABASE_NAME, null, DATABASE_VERSION);
     }
-
 
     public static DatabaseHelper getInstance() {
         if (mInstance == null)
@@ -35,7 +35,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return mDatabase;
     }
 
-
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.beginTransaction();
@@ -47,7 +46,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         db.endTransaction();
     }
-
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
@@ -61,7 +59,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.endTransaction();
         onCreate(db);
     }
-
 
     @Override
     public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {

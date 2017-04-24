@@ -18,6 +18,7 @@ public class InventoryApplication extends Application {
         super.onCreate();
 
         // Cuando se abra la aplicación, creará la base de datos.
+        //Esto es sólo para ver que funciona. Lo comentaremos
         DatabaseHelper.getInstance().openDatabase();
     }
 
